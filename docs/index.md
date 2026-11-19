@@ -1,8 +1,12 @@
 ---
 layout: project
-subtitle: Learner agency in AI-supported online learning
+title: Utilising Dynamic AOI tracking and Machine Learning for Investigating Learner Agency in AI-Mediated Online Learning Environments
+keywords:
+  - Dynamic AOI Tracking
+  - Machine Learning
+  - Learning Analytics
 background: |
-  AI tools can offer hints and feedback while learners work online. Understanding when learners seek help and how they use it can guide the design of these tools.
+  Understanding learner agency in AI-supported learning environments requires methods that capture how learners allocate attention, make decisions, and regulate their learning. Conventional eye-tracking approaches based on static Areas of Interest (AOIs) face limitations when learning interfaces change dynamically.
 funding:
   programme: JST LOTUS Programme
   institutions: Kyushu University and the Indian Institute of Technology Bombay
@@ -10,4 +14,4 @@ funding:
   end: "2027-09-30"
 ---
 
-GazeAgency studies how learners direct their own learning when AI support is available. The project draws on eye tracking and learning analytics to explore patterns of attention and interaction.
+This Japan–India collaborative project investigates **dynamic AOI tracking and machine learning** as methods for understanding learner agency in AI-mediated online learning environments. Integrating gaze analysis, behavioural pattern detection, and NLP-based descriptions, the project will extend existing analytical methods and evaluate their applicability within Kyushu University's AI-supported learning environment. It aims to advance methodological approaches for investigating learner agency, generate preliminary findings and strengthen international collaboration in AI-supported education and learning analytics.

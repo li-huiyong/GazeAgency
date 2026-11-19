@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description | escape }}">
-  <title>{{ site.title | escape }} | {{ page.subtitle | escape }}</title>
+  <title>{{ site.title | escape }} | {{ page.title | escape }}</title>
   <link rel="canonical" href="{{ '/' | absolute_url }}">
   <link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
 </head>
@@ -14,12 +14,21 @@
     <nav class="shell navigation" aria-label="Project sections">
       <a href="#background">Background</a>
       <a href="#overview">Overview</a>
+      <a href="#members">Members</a>
       <a href="#publications">Publications</a>
       <a href="#funding">Funding</a>
     </nav>
     <div class="shell hero">
       <h1>{{ site.title | escape }}</h1>
-      <p>{{ page.subtitle | escape }}</p>
+      <p class="project-title">{{ page.title | escape }}</p>
+      <ul class="keywords" role="list" aria-label="Project keywords">
+        {% for keyword in page.keywords %}
+          <li>
+            {% unless forloop.first %}<span class="keyword-divider" aria-hidden="true">×</span>{% endunless %}
+            <span class="keyword">{{ keyword | escape }}</span>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </header>
 
@@ -42,27 +51,37 @@
       </div>
     </section>
 
+    <section id="members" class="section" aria-labelledby="members-title">
+      <div class="shell section-inner">
+        <h2 id="members-title">Members</h2>
+        <ul class="member-list" role="list">
+          {% for member in site.data.members %}
+            <li>
+              <strong>{{ member.name | escape }}</strong>
+              <span>{{ member.affiliation | escape }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
     <section id="publications" class="section" aria-labelledby="publications-title">
       <div class="shell section-inner">
         <h2 id="publications-title">Publications</h2>
-        <div class="section-copy">
-          {% if site.data.publications.size > 0 %}
-            <ul class="publication-list" role="list">
-              {% for publication in site.data.publications %}
-                <li>
-                  {% if publication.url %}
-                    <a class="publication-title" href="{{ publication.url | escape }}">{{ publication.title | escape }}</a>
-                  {% else %}
-                    <strong>{{ publication.title | escape }}</strong>
-                  {% endif %}
-                  <p class="publication-citation">{{ publication.citation | escape }}</p>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p>Publications will be listed here as they become available.</p>
-          {% endif %}
-        </div>
+        {% if site.data.publications.size > 0 %}
+          <ul class="publication-list" role="list">
+            {% for publication in site.data.publications %}
+              <li>
+                {% if publication.url %}
+                  <a class="publication-title" href="{{ publication.url | escape }}">{{ publication.title | escape }}</a>
+                {% else %}
+                  <strong>{{ publication.title | escape }}</strong>
+                {% endif %}
+                <p class="publication-citation">{{ publication.citation | escape }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </section>
 
@@ -83,8 +102,7 @@
   </main>
 
   <footer class="shell footer">
-    <a href="https://github.com/li-huiyong/GazeAgency">GitHub repository</a>
-    <a href="#top">Back to top</a>
+    &copy; 2026 {{ site.title | escape }}
   </footer>
 </body>
 </html>
