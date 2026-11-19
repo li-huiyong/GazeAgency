@@ -147,10 +147,6 @@ a:focus-visible {
   background: var(--marble);
 }
 
-#funding {
-  background: var(--shironeri);
-}
-
 .section-inner {
   display: grid;
   grid-template-columns: minmax(11rem, 1fr) minmax(0, 2.4fr);
@@ -200,10 +196,13 @@ a:focus-visible {
 }
 
 .member-list span,
-.publication-citation,
-.research-period {
+.publication-citation {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.publication-empty {
+  color: #686868;
 }
 
 time {
@@ -211,10 +210,16 @@ time {
 }
 
 .footer {
+  background: var(--shironeri);
   padding-block: 1.2rem;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
+}
+
+.funding-acknowledgement {
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 40rem) {
@@ -233,13 +238,13 @@ time {
   }
 }
 
-@media (max-width: 28rem) {
+@media (max-width: 23rem) {
   .navigation {
     column-gap: 0.5rem;
   }
 
   .navigation a {
-    flex: 0 0 calc((100% - 1rem) / 3);
+    flex: 0 0 calc((100% - 0.5rem) / 2);
     text-align: center;
   }
 }
