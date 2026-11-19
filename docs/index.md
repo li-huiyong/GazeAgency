@@ -9,7 +9,7 @@ background: |
   Understanding learner agency in AI-supported learning environments requires methods that capture how learners allocate attention, make decisions, and regulate their learning. Conventional eye-tracking approaches based on static Areas of Interest (AOIs) face limitations when learning interfaces change dynamically.
 funding:
   programme: JST LOTUS Programme
-  url: https://www.jst.go.jp/program/india/project/2026.html
+  url: https://www.jst.go.jp/program/india/outline/
   start: "2026-10-01"
   end: "2027-09-30"
 ---

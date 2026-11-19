@@ -81,7 +81,7 @@
             {% endfor %}
           </ul>
         {% else %}
-          <p class="publication-empty">Coming soon</p>
+          <p class="publication-empty">Publications will be added as they become available.</p>
         {% endif %}
       </div>
     </section>
@@ -90,7 +90,7 @@
   <footer class="footer">
     <div class="shell">
       <p class="funding-acknowledgement">
-        The project is supported by <a href="{{ page.funding.url | escape }}">{{ page.funding.programme | escape }}</a>,
+        The project is supported by <a href="{{ page.funding.url | escape }}">{{ page.funding.programme | escape }}</a>. Period:
         <time datetime="{{ page.funding.start }}">{{ page.funding.start | date: "%-d %B %Y" }}</time> –
         <time datetime="{{ page.funding.end }}">{{ page.funding.end | date: "%-d %B %Y" }}</time>
       </p>
