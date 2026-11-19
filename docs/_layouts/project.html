@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | escape }}">
+  <title>{{ site.title | escape }} | {{ page.subtitle | escape }}</title>
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell navigation" aria-label="Project sections">
+      <a href="#background">Background</a>
+      <a href="#overview">Overview</a>
+      <a href="#publications">Publications</a>
+      <a href="#funding">Funding</a>
+    </nav>
+    <div class="shell hero">
+      <h1>{{ site.title | escape }}</h1>
+      <p>{{ page.subtitle | escape }}</p>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="background" class="section" aria-labelledby="background-title">
+      <div class="shell section-inner">
+        <h2 id="background-title">Background</h2>
+        <div class="section-copy">
+          {{ page.background | markdownify }}
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section" aria-labelledby="overview-title">
+      <div class="shell section-inner">
+        <h2 id="overview-title">Overview</h2>
+        <div class="section-copy">
+          {{ content }}
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section" aria-labelledby="publications-title">
+      <div class="shell section-inner">
+        <h2 id="publications-title">Publications</h2>
+        <div class="section-copy">
+          {% if site.data.publications.size > 0 %}
+            <ul class="publication-list" role="list">
+              {% for publication in site.data.publications %}
+                <li>
+                  {% if publication.url %}
+                    <a class="publication-title" href="{{ publication.url | escape }}">{{ publication.title | escape }}</a>
+                  {% else %}
+                    <strong>{{ publication.title | escape }}</strong>
+                  {% endif %}
+                  <p class="publication-citation">{{ publication.citation | escape }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>Publications will be listed here as they become available.</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section id="funding" class="section" aria-labelledby="funding-title">
+      <div class="shell section-inner">
+        <h2 id="funding-title">Funding</h2>
+        <div class="section-copy">
+          <h3>{{ page.funding.programme | escape }}</h3>
+          <p>Joint research between {{ page.funding.institutions | escape }}.</p>
+          <p class="research-period">
+            <time datetime="{{ page.funding.start }}">{{ page.funding.start | date: "%-d %B %Y" }}</time>
+            –
+            <time datetime="{{ page.funding.end }}">{{ page.funding.end | date: "%-d %B %Y" }}</time>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <a href="https://github.com/li-huiyong/GazeAgency">GitHub repository</a>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
